@@ -5,42 +5,49 @@ Desenvolvido por Gustavo Oliveira Tessaro.
 
 Sistema RH - Cadastro de Empresas e Funcionarios.
 
-Funcionalidade e Para que Serve?
+**Funcionalidade e Para que Serve?**
+
 O sistema de gerenciamento permite a administração de usuários, empresas e funcionários de forma integrada e eficiente. As principais funcionalidades são:
 
-Cadastro de Usuários: Permite o registro de usuários no sistema com nome e senha, facilitando o controle de acesso.
-Cadastro de Empresas: Facilita o gerenciamento das empresas, incluindo o registro de informações como nome, CNPJ e vinculação ao usuário responsável.
-Cadastro de Funcionários: Permite o registro dos funcionários das empresas, incluindo detalhes pessoais, cargo, salário e benefícios.
+- Cadastro de Usuários: Permite o registro de usuários no sistema com nome e senha, facilitando o controle de acesso.
+- Cadastro de Empresas: Facilita o gerenciamento das empresas, incluindo o registro de informações como nome, CNPJ e vinculação ao usuário responsável.
+- Cadastro de Funcionários: Permite o registro dos funcionários das empresas, incluindo detalhes pessoais, cargo, salário e benefícios.
+  
 Estrutura do Banco de Dados
 O sistema utiliza um banco de dados MySQL com as seguintes tabelas:
 
-Tabela Usuario:
+**Tabela Usuario:**
 
-id: Identificador único do usuário (AUTO_INCREMENT).
-nome: Nome do usuário (VARCHAR(100)).
-senha: Senha do usuário (VARCHAR(100)).
-**Tabela Empresa:
+- id: Identificador único do usuário (AUTO_INCREMENT).
+- nome: Nome do usuário (VARCHAR(100)).
+- senha: Senha do usuário (VARCHAR(100)).
 
-id: Identificador único da empresa (AUTO_INCREMENT).
-nome: Nome da empresa (VARCHAR(100)).
-cnpj: CNPJ da empresa (VARCHAR(18)).
-usuario_id: Chave estrangeira referenciando a tabela Usuario (INT).
-Tabela Funcionarios:
+**Tabela Empresa:**
 
-id: Identificador único do funcionário (AUTO_INCREMENT).
-nome: Nome do funcionário (VARCHAR(100)).
-data_nascimento: Data de nascimento do funcionário (DATE).
-cpf: CPF do funcionário (VARCHAR(14)).
-cargo: Cargo do funcionário (VARCHAR(50)).
-salario: Salário do funcionário (DECIMAL(10, 2)).
-beneficios: Benefícios do funcionário (TEXT).
-empresa_id: Chave estrangeira referenciando a tabela Empresa (INT).
-Como Instalar
-Instale o MySQL (caso ainda não tenha).
+- id: Identificador único da empresa (AUTO_INCREMENT).
+- nome: Nome da empresa (VARCHAR(100)).
+- cnpj: CNPJ da empresa (VARCHAR(18)).
+- usuario_id: Chave estrangeira referenciando a tabela Usuario (INT).
+  
+**Tabela Funcionarios:**
 
-Crie o banco de dados e as tabelas com o seguinte script:
+- id: Identificador único do funcionário (AUTO_INCREMENT).
+- nome: Nome do funcionário (VARCHAR(100)).
+- data_nascimento: Data de nascimento do funcionário (DATE).
+- cpf: CPF do funcionário (VARCHAR(14)).
+- cargo: Cargo do funcionário (VARCHAR(50)).
+- salario: Salário do funcionário (DECIMAL(10, 2)).
+- beneficios: Benefícios do funcionário (TEXT).
+- empresa_id: Chave estrangeira referenciando a tabela Empresa (INT).
+  
+**Como Instalar**
+- Instale o MySQL (caso ainda não tenha).
 
+- Crie o banco de dados e as tabelas com o seguinte script:
+
+```sql
 CREATE DATABASE IF NOT EXISTS BancoDeDadosDoFrontEnd;
+
 USE BancoDeDadosDoFrontEnd;
 
 -- Criar a tabela Usuario
@@ -71,16 +78,19 @@ CREATE TABLE Funcionarios (
     empresa_id INT,
     FOREIGN KEY (empresa_id) REFERENCES Empresa(id) ON DELETE CASCADE
 );
+```
 
-onfigure o Programa:
+**Configure o Programa:**
 
-Abra o programa e ajuste as configurações de conexão com o banco de dados, substituindo as strings "url", "usuário" e "senha" pelos correspondentes ao seu ambiente de banco de dados. Caso não tenha senha, utilize "" para representar que está vazio.
+- Abra o programa e ajuste as configurações de conexão com o banco de dados, substituindo as strings "url", "usuário" e "senha" pelos correspondentes ao seu ambiente de banco de dados. Caso não tenha senha, utilize "" para representar que está vazio.
 
-Funcionalidades Implementadas
+**Funcionalidades Implementadas**
 Cadastro de Usuários, Empresas e Funcionários:
 
-Registre e gerencie usuários, empresas e funcionários com todas as informações necessárias.
-Relacionamentos entre Tabelas:
+- Registre e gerencie usuários, empresas e funcionários com todas as informações necessárias.
+  
+**Relacionamentos entre Tabelas:**
 
-As tabelas Empresa e Funcionarios estão associadas com chaves estrangeiras, garantindo integridade referencial.
+- As tabelas Empresa e Funcionarios estão associadas com chaves estrangeiras, garantindo integridade referencial.
+  
 Este sistema simplifica a administração de dados empresariais e de funcionários, ajudando na organização e controle das informações.
