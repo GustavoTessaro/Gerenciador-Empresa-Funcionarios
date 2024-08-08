@@ -1,4 +1,4 @@
-# Gerenciador-Empresa-Funcionarios
+# SistemaRH-Empresa-Funcionarios
 Arquivo README
 
 Desenvolvido por Gustavo Oliveira Tessaro.
